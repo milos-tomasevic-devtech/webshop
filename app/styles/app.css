@@ -1,0 +1,32 @@
+body {
+    margin: 4em 0 0 1em;
+}
+
+
+header {
+    width: 100%;
+}
+
+#menu {
+    margin: 0 auto;
+    max-width: 1210px;
+    display: block;
+    float: none;
+    position: relative;
+    padding: 0 10px;
+}
+
+.flexslider {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#pretraga {
+    margin-top: 1em;
+    float: right;
+    width: 30%;
+}
+
+input {
+    width: 80%;
+}

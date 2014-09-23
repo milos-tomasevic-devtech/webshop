@@ -3,17 +3,56 @@
     <title>Webshop</title>
 
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css" media="screen"  charset="utf-8">
+    <link rel="stylesheet" href="vendor/FlexSlider/flexslider.css" type="text/css">
+    <link rel="stylesheet" href="styles/app.css" type="text/css">
 
 </head>
 <body>
 
+        <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+            <div id="menu">
+            <div class="navbar-header col-md-3">
+                <a href="#" class="navbar-brand">Angular Webshop</a>
+            </div>
+            <div class="navbar-collapse collapse ">
+                <nav class="navbar-logo">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/">Index</a></li>
+                        <li><a href="#/">Categories</a></li>
+                        <li><a href="#/">Products</a></li>
+                        <li><a href="#/">Brands</a></li>
+                        <li><a href="#/">Sign in</a></li>
+                        <li><a href="#/">Register</a></li>
+                    </ul>
+                </nav>
+                <div id="pretraga">
+                    <input  type="text"/>
+                    <a href="#">Search</a>
+                </div>
+            </div>
 
-<!-- vendor -->
+            </div>
+        </header>
+
+        <div ng-view>
+
+        </div>
+
+
+        <!-- vendor -->
 <script  src="vendor/angular/angular.min.js"></script>
 <script  src="vendor/angular-route/angular-route.min.js"></script>
 
-<!-- scripts -->
-<script src="scripts/app.js"></script>
+<script  src="vendor/jquery/jquery-1.9.1.min.js"></script>
 
+
+<!-- scripts -->
+<script src="app.js"></script>
+<script src="vendor/FlexSlider/jquery.flexslider.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(window).load(function() {
+                $('.flexslider').flexslider();
+            });
+        </script>
 </body>
 </html>
