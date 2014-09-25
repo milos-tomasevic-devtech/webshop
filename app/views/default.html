@@ -1,2 +1,17 @@
-<strong>Products</strong>
+<div ng-controller="NewestItemsController" id="items">
+    <h1>Newest Items</h1>
+    <hr/>
 
+    <div ng-repeat="rows in newestitems | partition: 4" class="allitems row">
+        <div style="position:relative" ng-repeat="item in rows" class="col-md-3">
+
+            <div class="box pull-left">
+                <img width="122" height="150" src="{{item.thumbnail_url}}" alt=""/>
+
+            </div>
+            <h2><a href="#">{{item.name | characters:33}}</a></h2>
+            <span class="price">Price: ${{item.price}}</span>
+            <span><a class="cart" href="#">Add to cart</a></span>
+        </div>
+    </div>
+</div>

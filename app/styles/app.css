@@ -1,5 +1,6 @@
 body {
-    margin: 4em 0 0 1em;
+    margin: 4em 0 0 0;
+    background-color: #D8D8D8;
 }
 
 
@@ -17,8 +18,10 @@ header {
 }
 
 .flexslider {
-    width: 500px;
+    width: 900px;
     margin: 0 auto;
+    border: 1px solid black;
+    margin-top: 10px;
 }
 
 #pretraga {
@@ -26,7 +29,96 @@ header {
     float: right;
     width: 30%;
 }
+.box {
+    padding: 0 10px;
+}
+#items {
+
+    margin-top:70px;
+    margin-bottom: 20px;
+
+}
+
+#items h1 {
+    font-size: 24px;
+}
+#items h2 {
+    font-size: 16px;
+    margin-top: 0px;
+    height: 54px;
+}
 
 input {
     width: 80%;
+}
+
+ p {
+    height: 60px;
+}
+.allitems {
+    background-color: white;
+    padding: 20px;
+}
+
+#popularitems {
+    margin: 0 auto;
+    width: 40%;
+}
+#footer {
+    border-top: 1px solid #eee;
+    background-color: ghostwhite;
+}
+
+#footer h3 {
+    font-size: 15px;
+    color: #2a6496;
+}
+
+#footer a {
+    color: #080808;
+}
+
+#footer ul li {
+    list-style: none;
+}
+
+#footer li {
+    border-bottom: 1px solid red;
+}
+
+#footer ul {
+    padding: 40px;
+    border-right: 1px #D8D8D8 solid;
+    height: 25%;
+}
+#payment {
+    margin-top: 10px;
+}
+
+#copyright {
+    margin-top: 15%;
+}
+
+.cart {
+    background-color: #c12e2a;
+    color: white;
+    padding: 5px;
+    margin-top: 20px;
+    display:block;
+    width: 30%;
+    float:left;
+    font-size: 12px;
+    text-align:center;
+    text-decoration: none;
+
+}
+
+.cart:hover {
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+}
+
+.price {
+    height: 20%;
 }

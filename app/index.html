@@ -9,50 +9,57 @@
 </head>
 <body>
 
-        <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
-            <div id="menu">
-            <div class="navbar-header col-md-3">
-                <a href="#" class="navbar-brand">Angular Webshop</a>
-            </div>
-            <div class="navbar-collapse collapse ">
-                <nav class="navbar-logo">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#/">Index</a></li>
-                        <li><a href="#/">Categories</a></li>
-                        <li><a href="#/">Products</a></li>
-                        <li><a href="#/">Brands</a></li>
-                        <li><a href="#/">Sign in</a></li>
-                        <li><a href="#/">Register</a></li>
-                    </ul>
-                </nav>
-                <div id="pretraga">
-                    <input  type="text"/>
-                    <a href="#">Search</a>
-                </div>
-            </div>
-
-            </div>
-        </header>
-
-        <div ng-view>
-
-        </div>
+<div class="container">
+    <header ng-include="'views/header.html'" class="navbar navbar-inverse navbar-fixed-top" role="banner"></header>
 
 
-        <!-- vendor -->
+    <!-- premestiti u default template -->
+    <div  class="flexslider">
+        <ul class="slides">
+            <li>
+                <img src="views/img/reklama1.png" />
+            </li>
+
+            <li>
+                <img src="views/img/reklama3.png" />
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div ng-view>
+
+    </div>
+
+
+</div>
+
+<div ng-include="'views/footer.html'" id="footer"></div>
+
+
+<!-- vendor -->
 <script  src="vendor/angular/angular.min.js"></script>
 <script  src="vendor/angular-route/angular-route.min.js"></script>
-
-<script  src="vendor/jquery/jquery-1.9.1.min.js"></script>
+<script  src="vendor/angular-resource/angular-resource.min.js"></script>
+<script  src="vendor/angular-truncate/src/truncate.js"></script>
+<script  src="vendor/jquery/jquery.min.js"></script>
+<script  src="vendor/FlexSlider/jquery.flexslider.js"></script>
 
 
 <!-- scripts -->
 <script src="app.js"></script>
-<script src="vendor/FlexSlider/jquery.flexslider.js"></script>
-        <script type="text/javascript" charset="utf-8">
-            $(window).load(function() {
-                $('.flexslider').flexslider();
-            });
-        </script>
+<script src="scripts/controllers/NewestItemsController.js"></script>
+<script src="scripts/filters/partitionFilter.js"></script>
+
+<script src="scripts/services/productService.js"></script>
+
+
+<script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+        $('.flexslider').flexslider();
+    });
+</script>
+
 </body>
 </html>

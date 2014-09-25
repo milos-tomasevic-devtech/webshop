@@ -6,7 +6,10 @@
         "bootstrap": "~3.0.0",
         "jquery": "~1.10.2",
         "angular-route": "~1.2.x",
-        "FlexSlider": "latest"
+        "angular-resource": "1.2.25",
+        "FlexSlider": "latest",
+        "angular-truncate": "latest",
+        "bootstrap-bower": "angular-ui/bootstrap-bower"
     },
     "private": true
 }
