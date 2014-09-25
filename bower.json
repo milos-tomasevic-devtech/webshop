@@ -9,7 +9,8 @@
         "angular-resource": "1.2.25",
         "FlexSlider": "latest",
         "angular-truncate": "latest",
-        "bootstrap-bower": "angular-ui/bootstrap-bower"
+        "bootstrap-bower": "angular-ui/bootstrap-bower",
+        "jquery-popbox": "gristmill/jquery-popbox"
     },
     "private": true
 }

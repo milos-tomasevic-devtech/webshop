@@ -12,25 +12,7 @@
 <div class="container">
     <header ng-include="'views/header.html'" class="navbar navbar-inverse navbar-fixed-top" role="banner"></header>
 
-
-    <!-- premestiti u default template -->
-    <div  class="flexslider">
-        <ul class="slides">
-            <li>
-                <img src="views/img/reklama1.png" />
-            </li>
-
-            <li>
-                <img src="views/img/reklama3.png" />
-            </li>
-
-        </ul>
-    </div>
-
-
-    <div ng-view>
-
-    </div>
+    <div ng-view></div>
 
 
 </div>
@@ -45,7 +27,7 @@
 <script  src="vendor/angular-truncate/src/truncate.js"></script>
 <script  src="vendor/jquery/jquery.min.js"></script>
 <script  src="vendor/FlexSlider/jquery.flexslider.js"></script>
-
+<script  src="vendor/jquery-popbox/popbox.js"></script>
 
 <!-- scripts -->
 <script src="app.js"></script>
@@ -54,12 +36,18 @@
 
 <script src="scripts/services/productService.js"></script>
 
+<script type='text/javascript'>
 
-<script type="text/javascript" charset="utf-8">
-    $(window).load(function() {
+    function plugins() {
+        $('.popbox').popbox();
         $('.flexslider').flexslider();
-    });
+
+    }
+
+    plugins();
+
 </script>
+
 
 </body>
 </html>
