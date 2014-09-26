@@ -17,11 +17,14 @@ angular.module('webshop')
                 $scope.incart = $scope.productsInCart.length;
 
                 $scope.cart = _.chain($scope.productsInCart)
+
                     .groupBy("id")
                     .map(function(value, key) {
+                        console.log("objekat: " + JSON.stringify(value));
                         return {
                             id: key,
                             name: value[0]['name'],
+                            image_url: value[0]['image'],
                             price: sum(_.pluck(value, 'price')).toFixed(2),
                             quantity: (sum(_.pluck(value, 'quantity')))
                         }

@@ -30,9 +30,13 @@
                             <form action="">
                                 <h3>In cart</h3>
                                 <hr/>
+
                                 <div ng-repeat="product in cart" class="in-cart-products">
-                                    <p>{{product.name}} x <strong>{{ product.quantity }}</strong> </p>
-                                    <p>Price: ${{product.price}}</p>
+                                    <img  class="cart_image" src="{{ product.image_url }}"  alt=""/>
+                                    <p><a href="#/">{{product.name}}</a>  </p>
+                                    <p style="clear:both">x <strong>{{ product.quantity }}</strong></p>
+                                    <p class="pull-right"></span>Price: ${{product.price}}</p>
+                                    <hr style="clear:both"/>
                                 </div>
 
                             </form>
