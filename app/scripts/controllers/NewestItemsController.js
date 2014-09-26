@@ -3,15 +3,11 @@ angular.module('webshop')
 
         $scope.$on('$viewContentLoaded', plugins());
 
-        $scope.items = [];
-
         productService.query(function(data) {
             $scope.newestitems = data;
         });
 
-
         $scope.addItem = function (id, name, price) {
-
-            $scope.items.push({id: id, name: name, price: price});
+            $scope.productsInCart.push({id: id, name: name, price: price, quantity: 1});
         }
     });

@@ -10,7 +10,8 @@
         "FlexSlider": "latest",
         "angular-truncate": "latest",
         "bootstrap-bower": "angular-ui/bootstrap-bower",
-        "jquery-popbox": "gristmill/jquery-popbox"
+        "jquery-popbox": "gristmill/jquery-popbox",
+        "underscore": "latest"
     },
     "private": true
 }
