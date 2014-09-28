@@ -248,3 +248,8 @@ form {
     margin-bottom: 20px;
     clear: both;
 }
+
+.product_image {
+    width: 122px;
+    height: 150px;
+}

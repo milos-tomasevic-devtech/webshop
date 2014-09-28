@@ -1,4 +1,3 @@
-<!-- premestiti u default template -->
 <div  class="flexslider">
     <ul class="slides">
         <li>
@@ -20,7 +19,7 @@
         <div style="position:relative" ng-repeat="item in rows" class="col-md-3">
 
             <div class="boxthumb pull-left">
-                <img  width="122" height="150" src="{{item.thumbnail_url}}" alt=""/>
+                <img  class="product_image" src="{{item.thumbnail_url}}" alt=""/>
 
             </div>
             <h2><a href="#">{{item.name | characters:33}}</a></h2>

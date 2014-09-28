@@ -20,7 +20,6 @@ angular.module('webshop')
 
                     .groupBy("id")
                     .map(function(value, key) {
-                        console.log("objekat: " + JSON.stringify(value));
                         return {
                             id: key,
                             name: value[0]['name'],
