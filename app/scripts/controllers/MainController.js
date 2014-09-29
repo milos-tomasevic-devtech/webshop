@@ -29,6 +29,10 @@ angular.module('webshop')
                         }
                     })
                     .value();
+                $scope.cart_total = _($scope.cart).reduce(function(m,x) {
+                    return m + Number(x.price);
+                }, 0);
+
 
             }
         });

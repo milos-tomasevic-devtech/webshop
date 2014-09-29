@@ -21,8 +21,10 @@
             </div>
             <div id="cart">
                 <div id="pop" class='popbox'>
-                    In Cart <img class="open" add-to-cart src="http://png-4.findicons.com/files/icons/2015/24x24_free_application/24/shopping_cart.png" alt=""/> {{ incart }}
+                    <p class="open">
+                        Cart <img add-to-cart src="http://png-4.findicons.com/files/icons/2015/24x24_free_application/24/shopping_cart.png" alt=""/> {{ incart }}
 
+                    </p>
                     <div class='collapse'>
                         <div class='box'>
                             <div class='arrow'></div>
@@ -33,12 +35,13 @@
 
                                 <div ng-repeat="product in cart" class="in-cart-products">
                                     <img  class="cart_image" src="{{ product.image_url }}"  alt=""/>
-                                    <p><a href="#/">{{product.name}}</a>  </p>
-                                    <p style="clear:both">x <strong>{{ product.quantity }}</strong></p>
-                                    <p class="pull-right"></span>Price: ${{product.price}}</p>
+                                    <p><a href="#/">{{product.name}}</a>  </p> <br />
+                                    <p class="quantity" >Quantity: <strong>{{ product.quantity }}</strong></p>
+                                    <p class="cart-price pull-right"></span>Price: <strong>${{product.price}}</strong></p>
                                     <hr style="clear:both"/>
                                 </div>
-
+                                <h3 id="total-price">Total: {{cart_total | currency}}</h3>
+                                <a href="#/cart"><p id="show-cart">Show cart</p></a>
                             </form>
 
                         </div>
