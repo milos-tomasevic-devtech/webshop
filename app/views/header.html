@@ -22,7 +22,7 @@
             <div id="cart">
                 <div id="pop" class='popbox'>
                     <p class="open">
-                        Cart <img add-to-cart src="http://png-4.findicons.com/files/icons/2015/24x24_free_application/24/shopping_cart.png" alt=""/> {{ incart }}
+                        Cart <img add-to-cart src="http://png-4.findicons.com/files/icons/2015/24x24_free_application/24/shopping_cart.png" alt=""/> {{ cart.incart }}
 
                     </p>
                     <div class='collapse'>
@@ -33,7 +33,7 @@
                                 <h3>In cart</h3>
                                 <hr/>
 
-                                <div ng-repeat="product in cart" class="in-cart-products">
+                                <div ng-repeat="product in cart.items" class="in-cart-products">
                                     <img  class="cart_image" src="{{ product.image_url }}"  alt=""/>
                                     <p><a href="#/">{{product.name}}</a>  </p> <br />
                                     <p class="quantity" >Quantity: <strong>{{ product.quantity }}</strong></p>

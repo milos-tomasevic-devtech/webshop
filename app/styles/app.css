@@ -199,7 +199,7 @@ form {
     border-right: 11px solid transparent;
     border-bottom: 11px solid #FFF;
     position:absolute;
-    left:1px;
+    left:135px !important;
     top:-10px;
     z-index:1001;
 }
