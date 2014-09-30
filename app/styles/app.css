@@ -286,6 +286,7 @@ form {
 
 #cart-page {
     margin-top: 15px;
+    min-height: 54%;
 }
 
 #cart-page a {

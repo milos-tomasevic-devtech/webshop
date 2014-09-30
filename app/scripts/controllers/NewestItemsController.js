@@ -7,8 +7,4 @@ angular.module('webshop')
             $scope.newestitems = data;
         });
 
-        $scope.addItem = function (id, name, price, image_url) {
-            $scope.productsInCart.push({id: id, name: name, price: price, quantity: 1, image: image_url});
-
-        }
     });

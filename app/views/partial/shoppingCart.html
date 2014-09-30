@@ -18,7 +18,10 @@
                 </div>
                 <div class="panel-body">
 
-                    <div ng-repeat="product in cart.items" >
+                    <h4 ng-if="!cart.incart" class="animate-if">
+                      Empty cart.
+                    </h4>
+                    <div ng-controller="CartItemController" ng-repeat="product in cart.items" >
                     <div class="row">
                         <div class="col-md-2"><img class="img-responsive" src="{{product.image_url}}">
                         </div>
@@ -49,19 +52,18 @@
                     <div class="row">
                         <div class="text-center">
 
-
                         </div>
                     </div>
                 </div>
-                <div class="panel-footer">
+                <div ng-if="cart.incart" class="panel-footer">
                     <div class="row text-center">
                         <div class="col-md-9">
-                            <h4 class="text-right">Total <strong>{{cart_total | currency}}</strong></h4>
+                            <h4  class="text-right">Total <strong>{{cart.cart_total | currency}}</strong></h4>
                         </div>
                         <div class="col-md-3">
-                            <button type="button" class="btn btn-success btn-block">
-                                Checkout
-                            </button>
+
+                                <a class="btn btn-success btn-block" href="#/checkout">Checkout</a>
+
                             <button ng-click="removeAll();" type="button" class="btn btn-success btn-block">
                                 Remove All
                             </button>

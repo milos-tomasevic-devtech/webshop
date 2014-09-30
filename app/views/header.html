@@ -22,7 +22,7 @@
             <div id="cart">
                 <div id="pop" class='popbox'>
                     <p class="open">
-                        Cart <img add-to-cart src="http://png-4.findicons.com/files/icons/2015/24x24_free_application/24/shopping_cart.png" alt=""/> {{ cart.incart }}
+                        Cart <img calculate-cart src="http://png-4.findicons.com/files/icons/2015/24x24_free_application/24/shopping_cart.png" alt=""/> {{ cart.incart }}
 
                     </p>
                     <div class='collapse'>
@@ -40,7 +40,7 @@
                                     <p class="cart-price pull-right"></span>Price: <strong>${{product.price}}</strong></p>
                                     <hr style="clear:both"/>
                                 </div>
-                                <h3 id="total-price">Total: {{cart_total | currency}}</h3>
+                                <h3 id="total-price">Total: {{cart.cart_total | currency}}</h3>
                                 <a href="#/cart"><p id="show-cart">Show cart</p></a>
                             </form>
 
