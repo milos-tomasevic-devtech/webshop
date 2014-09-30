@@ -297,3 +297,8 @@ form {
     color: white !important;
     text-decoration: none;
 }
+
+#checkout-1 {
+    margin-top: 15px;
+    min-height: 54%;
+}
