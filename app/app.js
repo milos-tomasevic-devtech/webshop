@@ -7,5 +7,6 @@ angular.module('webshop').config(['$routeProvider', function($routeProvider) {
         .when('/', { templateUrl: 'views/default.html'})
         .when('/cart', { templateUrl: 'views/partial/shoppingCart.html'})
         .when('/checkout', { templateUrl: 'views/partial/checkout_1.html'})
+        .when('/register', { templateUrl: 'views/partial/register.html'})
         .otherwise({ redirectTo: '/'});
 }]);
