@@ -325,3 +325,16 @@ hr {
 .input-xlarge {
     margin-top: 8px;
 }
+
+.form-horizontal .control-label {
+    float: left;
+    width: 160px;
+    padding-top: 5px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
