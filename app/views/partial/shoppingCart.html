@@ -18,7 +18,7 @@
                 </div>
                 <div class="panel-body">
 
-                    <h4 ng-if="!cart.incart" class="animate-if">
+                    <h4 ng-if="!cart.incart">
                       Empty cart.
                     </h4>
                     <div ng-controller="CartItemController" ng-repeat="product in cart.items" >
