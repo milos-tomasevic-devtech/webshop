@@ -326,13 +326,6 @@ hr {
     margin-top: 8px;
 }
 
-.form-horizontal .control-label {
-    float: left;
-    width: 160px;
-    padding-top: 5px;
-    text-align: right;
-    margin-bottom: 20px;
-}
 
 label {
     display: block;
@@ -341,4 +334,27 @@ label {
 
 .setup-content {
     min-height: 40%;
+}
+
+input.ng-dirty.ng-invalid {
+    border: 1px solid red;
+}
+input.ng-valid {
+    border: 1px solid green;
+}
+
+.continue-button {
+    margin-top:10px;
+}
+
+.panel-heading h3 {
+    font-size: 20px;
+}
+
+.error {
+    color: red;
+}
+
+input.has-visited.ng-invalid:not(.has-focus) {
+    background-color: #ffeeee;
 }
