@@ -27,13 +27,27 @@ angular.module('webshop')
                             controllers[1] : null;
 
                         formElement.bind('submit', function (event) {
+
+                            //$('#activate-step-2').on('click', function(e) {
+                            //    $('ul.setup-panel li:eq(1)').removeClass('disabled');
+                            //    $('ul.setup-panel li a[href="#step-2"]').trigger('click');
+                            //    $(this).remove();
+                            //});
+
                             submitController.setAttempted();
                             if (!scope.$$phase) scope.$apply();
 
                             if (!formController.$valid) return false;
 
                             scope.$apply(function() {
+                                var activeLi = $('ul.setup-panel li.active');
+                                var nextLi = activeLi.next();
+                                $(activeLi).removeClass('active');
+                                console.log('NEXTLI: ' + nextLi)
+                                $(nextLi).addClass('active');
                                 $location.path(routePath);
+
+
 
                             });
                         });

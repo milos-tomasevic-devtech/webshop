@@ -358,3 +358,8 @@ input.ng-valid {
 input.has-visited.ng-invalid:not(.has-focus) {
     background-color: #ffeeee;
 }
+
+.success {
+    display:block;
+    margin-top:40px;
+}

@@ -37,11 +37,7 @@ angular.module('webshop')
                             $('ul.setup-panel li.active a').trigger('click');
 
 
-                            //$('#activate-step-2').on('click', function(e) {
-                            //    $('ul.setup-panel li:eq(1)').removeClass('disabled');
-                            //    $('ul.setup-panel li a[href="#step-2"]').trigger('click');
-                            //    $(this).remove();
-                            //});
+
                             //
                             //$('#activate-step-3').on('click', function(e) {
                             //    $('ul.setup-panel li:eq(2)').removeClass('disabled');

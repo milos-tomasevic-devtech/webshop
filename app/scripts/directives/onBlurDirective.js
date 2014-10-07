@@ -1,41 +1,20 @@
 angular.module('webshop')
-    .directive('onBlur', function() {
+    .directive('validEmail', function() {
         return {
-            restrict: 'E',
-            require: '?ngModel',
-            link: function (scope, elm, attr, ctrl) {
-                if (!ctrl) {
-                    return;
-                }
+            require: 'ngModel',
+            link: function(scope, elm, attrs, ctrl){
+                var validator = function(value){
+                    if (value == '' || typeof value == 'undefined') {
+                        ctrl.$setValidity('validEmail', true);
+                    } else {
+                        ctrl.$setValidity('validEmail', /your-regexp-here/.test(value));
+                    }
+                    return value;
+                };
 
-                elm.on('focus', function () {
-                    elm.addClass('has-focus');
-
-                    scope.$apply(function () {
-                        ctrl.hasFocus = true;
-                    });
-                });
-
-                elm.on('blur', function () {
-                    elm.removeClass('has-focus');
-                    elm.addClass('has-visited');
-
-                    scope.$apply(function () {
-                        ctrl.hasFocus = false;
-                        ctrl.hasVisited = true;
-                    });
-                });
-
-                elm.closest('form').on('submit', function () {
-                    elm.addClass('has-visited');
-
-                    scope.$apply(function () {
-                        ctrl.hasFocus = false;
-                        ctrl.hasVisited = true;
-                    });
-                });
-
+                // replace all other validators!
+                ctrl.$parsers = [validator];
+                ctrl.$formatters = [validator];
             }
-        };
-
+        }
     });

@@ -1,11 +1,16 @@
-<div class="row setup-content" id="step-2">
+<div ng-controller="DeliveryController" class="container">
+
+    <div class="row setup-content" id="step-2">
+
     <div class="col-xs-12">
+
         <div class="col-md-12 well">
+
             <div id="register" class="container">
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2">
-                        <form>
+                        <form submit-form="/checkout-confirmation" name="deliveryForm" novalidate id="deliveryForm">
                             <h4>Please select a delivery address
 
                             </h4>
@@ -17,8 +22,17 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="first_name">First name:</label>
-                                        <input type="text" name="first_name" id="first_name" class="form-control input-xlarge"  >
+                                        <input type="text" ng-model-options="{ updateOn: 'blur' }" required name="first_name" id="first_name" class="form-control input-xlarge"  >
                                     </div>
+                                    <small class="error"
+                                           ng-show=" (deliveryForm.first_name.$error.required && rc.deliveryForm.attempted) || (deliveryForm.first_name.$invalid && deliveryForm.first_name.$dirty)">
+                                        First name is required.
+                                    </small>
+                                    <small  class="success"
+                                            ng-show="(deliveryForm.first_name.$valid && deliveryForm.first_name.$dirty)">
+                                        <img src="http://www.splafinga.com/znc/orangedream/pub/success-icon.png" alt=""/>
+                                    </small>
+
                                 </div>
                                 <div class=" col-md-12">
                                     <div class="form-group">
@@ -74,3 +88,4 @@
         </div>
     </div>
 </div>
+    </div>

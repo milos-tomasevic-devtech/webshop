@@ -12,7 +12,8 @@
         "bootstrap-bower": "angular-ui/bootstrap-bower",
         "jquery-popbox": "milos-tomasevic-devtech/jquery-popbox",
         "angular-cookies": "~1.2.x",
-        "underscore": "latest"
+        "underscore": "latest",
+        "angular-ui-router": "0.2.11"
     },
     "private": true
 }
