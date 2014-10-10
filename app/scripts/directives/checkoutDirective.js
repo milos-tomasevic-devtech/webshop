@@ -1,5 +1,5 @@
 angular.module('webshop')
-        .directive('checkout', function($location) {
+        .directive('checkout', function($location, $rootScope) {
 
         return {
             restrict: 'A',
@@ -21,6 +21,13 @@ angular.module('webshop')
                             allWells.hide();
                             console.log("putanja: " + $location.path());
 
+                            $rootScope.$on("$stateChangeStart", function(e, toState, toParams, fromState, fromParams) {
+
+                                       // console.log("stanje promenjeno na: "  + $location.path() );
+                                $('a[data-url]').closest('li').removeClass('active')
+
+                                $('a[data-url="' +$location.path() + '"]').closest('li').addClass('active')
+                            });
                             //navListItems.click(function(e)
                             //{
                             //    console.log("klik handler pozvan");
@@ -40,8 +47,9 @@ angular.module('webshop')
                             //    }
                             //});
 
-                            console.log('obj: ' + $('a[href="' +$location.path() + '"]').closest('li'));
-                            $('a[href="#' +$location.path() + '"]').closest('li').addClass('active')
+                            //console.log('obj: ' + $('a[href="' +$location.path() + '"]').closest('li'));
+                            $('a[data-url]').closest('li').removeClass('active')
+                            $('a[data-url="' +$location.path() + '"]').closest('li').addClass('active')
                             //$('ul.setup-panel li.active a').trigger('click');
 
 
