@@ -363,3 +363,15 @@ input.has-visited.ng-invalid:not(.has-focus) {
     display:block;
     margin-top:40px;
 }
+
+#delivery {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+form h4 {
+    color: #0066bb;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}

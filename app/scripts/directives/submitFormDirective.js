@@ -36,14 +36,11 @@ angular.module('webshop')
 
                             submitController.setAttempted();
                             if (!scope.$$phase) scope.$apply();
-
                             if (!formController.$valid) return false;
-
                             scope.$apply(function() {
                                 var activeLi = $('ul.setup-panel li.active');
                                 var nextLi = activeLi.next();
                                 $(activeLi).removeClass('active');
-                                console.log('NEXTLI: ' + nextLi)
                                 $(nextLi).addClass('active');
                                 $location.path(routePath);
 

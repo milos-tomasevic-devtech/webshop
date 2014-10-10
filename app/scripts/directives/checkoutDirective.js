@@ -1,5 +1,5 @@
 angular.module('webshop')
-        .directive('checkout', function() {
+        .directive('checkout', function($location) {
 
         return {
             restrict: 'A',
@@ -19,23 +19,30 @@ angular.module('webshop')
                                 allWells = $('.setup-content');
 
                             allWells.hide();
+                            console.log("putanja: " + $location.path());
 
-                            navListItems.click(function(e)
-                            {
-                                e.preventDefault();
-                                var $target = $($(this).attr('href')),
-                                    $item = $(this).closest('li');
+                            //navListItems.click(function(e)
+                            //{
+                            //    console.log("klik handler pozvan");
+                            //    e.preventDefault();
+                            //   // console.log("jel radi: " + $($(this).attr('href')));
+                            //    var targetUrl = $(this).attr('href').replace("#", '');
+                            //    var $item = $(this).closest('li');
+                            //
+                            //    if (!$item.hasClass('disabled')) {
+                            //        console.log('brisem')
+                            //        navListItems.closest('li').removeClass('active');
+                            //        $item.addClass('active');
+                            //        allWells.hide();
+                            //        //console.log($target);
+                            //        //$target.show();
+                            //        $location.path(targetUrl);
+                            //    }
+                            //});
 
-                                if (!$item.hasClass('disabled')) {
-                                    navListItems.closest('li').removeClass('active');
-                                    $item.addClass('active');
-                                    allWells.hide();
-                                    $target.show();
-                                }
-                            });
-
-                            $('ul.setup-panel li.active a').trigger('click');
-
+                            console.log('obj: ' + $('a[href="' +$location.path() + '"]').closest('li'));
+                            $('a[href="#' +$location.path() + '"]').closest('li').addClass('active')
+                            //$('ul.setup-panel li.active a').trigger('click');
 
 
                             //
