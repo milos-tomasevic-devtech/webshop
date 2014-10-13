@@ -1,4 +1,4 @@
-<div ng-controller="MainCheckoutController" class="container">
+<div ng-controller="MainCheckoutController" >
 
     <div class="row setup-content" id="step-1">
         <div class="col-xs-12">
@@ -49,12 +49,13 @@
                                                        ng-show=" (registerForm.email_register.$error.required && rc.registerForm.attempted) || (registerForm.email_register.$invalid && registerForm.email_register.$dirty)">
                                                     Valid email address is required.
                                                 </small>
+
                                                 <small  class="success"
                                                    ng-show="(registerForm.email_register.$valid && registerForm.email_register.$dirty)">
                                                     <img src="http://www.splafinga.com/znc/orangedream/pub/success-icon.png" alt=""/>
                                                 </small>
 
-                                </div>
+                                         </div>
 
                                         <button id="activate-step-2"  name="submit" value="Next" class="continue-button btn">Next</button>
                                     </form>

@@ -34,7 +34,7 @@
                                 <hr/>
 
                                 <div ng-repeat="product in cart.items" class="in-cart-products">
-                                    <img  class="cart_image" src="{{ product.image_url }}"  alt=""/>
+                                    <img  class="cart_image" ng-src="{{ product.image_url }}"  alt=""/>
                                     <p><a href="#/">{{product.name}}</a>  </p> <br />
                                     <p class="quantity" >Quantity: <strong>{{ product.quantity }}</strong></p>
                                     <p class="cart-price pull-right"></span>Price: <strong>${{product.price}}</strong></p>

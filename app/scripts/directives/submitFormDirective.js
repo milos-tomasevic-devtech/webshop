@@ -25,14 +25,9 @@ angular.module('webshop')
                         var submitController = controllers[0];
                         var formController = (controllers.length > 1) ?
                             controllers[1] : null;
+                        
 
                         formElement.bind('submit', function (event) {
-
-                            //$('#activate-step-2').on('click', function(e) {
-                            //    $('ul.setup-panel li:eq(1)').removeClass('disabled');
-                            //    $('ul.setup-panel li a[href="#step-2"]').trigger('click');
-                            //    $(this).remove();
-                            //});
 
                             submitController.setAttempted();
                             if (!scope.$$phase) scope.$apply();
@@ -43,8 +38,6 @@ angular.module('webshop')
                                 $(activeLi).removeClass('active');
                                 $(nextLi).addClass('active');
                                 $location.path(routePath);
-
-
 
                             });
                         });

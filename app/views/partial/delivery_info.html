@@ -1,4 +1,4 @@
-<div ng-controller="DeliveryController" id="delivery" class="container">
+<div ng-controller="DeliveryController" id="delivery" >
 
     <div class="row setup-content" id="step-2">
 
@@ -10,6 +10,7 @@
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2">
+
                         <form submit-form="/checkout/confirmation" name="deliveryForm" id="deliveryForm" autocomplete="off" novalidate>
                             <h4>Please select a delivery address
 
@@ -18,9 +19,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="first_name">First name:                                  da   {{ deliveryForm.first_name | json }}
-                                        </label>
-                                        <input type="text" ng-model-options="{ updateOn: 'blur' }" required name="first_name" id="first_name" class="form-control input-xlarge"  >
+                                        <label for="first_name">First name: </label>
+                                        <input type="text" ng-model-options="{ updateOn: 'blur' }" required name="first_name" id="first_name" ng-model="session.first_name" class="form-control input-xlarge"  >
                                     </div>
                                     <small class="error"
                                            ng-show=" (deliveryForm.first_name.$error.required && rc.deliveryForm.attempted) || (deliveryForm.first_name.$invalid && deliveryForm.first_name.$dirty)">
@@ -35,8 +35,16 @@
                                 <div class=" col-md-12">
                                     <div class="form-group">
                                         <label for="last_name">Last name:</label>
-                                        <input type="text" name="last_name" id="last_name" class="form-control input-xlarge"  >
+                                        <input type="text" ng-model-options="{updateOn: 'blur' }" required  name="last_name" id="last_name" ng-model="session.last_name" class="form-control input-xlarge"  >
                                     </div>
+                                    <small class="error"
+                                           ng-show=" (deliveryForm.last_name.$error.required && rc.deliveryForm.attempted) || (deliveryForm.last_name.$invalid && deliveryForm.last_name.$dirty)">
+                                        Last name is required.
+                                    </small>
+                                    <small class="success"
+                                            ng-show="(deliveryForm.last_name.$valid && deliveryForm.last_name.$dirty)">
+                                        <img src="http://www.splafinga.com/znc/orangedream/pub/success-icon.png" alt=""/>
+                                    </small>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -47,31 +55,74 @@
                             </div>
                             <div class="form-group">
                                 <label for="address_1">Address:</label>
-                                <input type="text" name="address_1" id="address_1" class="form-control input-xlarge"  >
+                                <input type="text" ng-model-options="{updateOn: 'blur'}" required ng-model="session.address_1"  name="address_1" id="address_1" class="form-control input-xlarge"  >
                                 <input type="text" name="address_2" id="address_2" class="form-control input-xlarge"  >
+                                <small class="error"
+                                       ng-show=" (deliveryForm.address_1.$error.required && rc.deliveryForm.attempted) || (deliveryForm.address_1.$invalid && deliveryForm.address_1.$dirty)">
+                                    Address is  required.
+                                </small>
+                                <small class="success"
+                                       ng-show="(deliveryForm.address_1.$valid && deliveryForm.address_1.$dirty)">
+                                    <img src="http://www.splafinga.com/znc/orangedream/pub/success-icon.png" alt=""/>
+                                </small>
 
                             </div>
                             <div class="form-group">
                                 <label for="city">City:</label>
-                                <input type="text" name="city" id="city" class="form-control input-xlarge"  >
+                                <input type="text" ng-model-options="{updateOn: 'blur'}" required ng-model="session_city" name="city" id="city" class="form-control input-xlarge"  >
 
+                                <small class="error"
+                                       ng-show=" (deliveryForm.city.$error.required && rc.deliveryForm.attempted) || (deliveryForm.city.$invalid && deliveryForm.city.$dirty)">
+                                    City is  required.
+                                </small>
+                                <small class="success"
+                                       ng-show="(deliveryForm.city.$valid && deliveryForm.city.$dirty)">
+                                    <img src="http://www.splafinga.com/znc/orangedream/pub/success-icon.png" alt=""/>
+                                </small>
                             </div>
                             <div class="form-group">
-                                <label for="city">Postcode:</label>
-                                <input type="text" name="postcode" id="postcode" class="form-control input-xlarge" >
-
+                                <label for="postcode">Postcode:</label>
+                                <input type="text" ng-model-options="{updateOn: 'blur'}" required ng-model="session.postcode" name="postcode" id="postcode" class="form-control input-xlarge" >
+                                <small class="error"
+                                       ng-show=" (deliveryForm.postcode.$error.required && rc.deliveryForm.attempted) || (deliveryForm.postcode.$invalid && deliveryForm.postcode.$dirty)">
+                                    Postcode is  required.
+                                </small>
+                                <small class="success"
+                                       ng-show="(deliveryForm.postcode.$valid && deliveryForm.postcode.$dirty)">
+                                    <img src="http://www.splafinga.com/znc/orangedream/pub/success-icon.png" alt=""/>
+                                </small>
                             </div>
                             <h4>Please set up your password:</h4>
                             <hr/>
                             <div class="form-group">
                                 <label for="password_1">Password:</label>
-                                <input type="password" name="password_1" id="password_1" class="form-control input-xlarge" >
-
+                                <input type="password" ng-model-options="{updateOn: 'blur'}" required ng-model="session.password_1" name="password_1" id="password_1" class="form-control input-xlarge" >
+                                <small class="error"
+                                       ng-show=" (deliveryForm.password_1.$error.required && rc.deliveryForm.attempted) || (deliveryForm.password_1.$invalid && deliveryForm.password_1.$dirty)">
+                                    Password is  required.
+                                </small>
+                                <small class="success"
+                                       ng-show="(deliveryForm.password_1.$valid && deliveryForm.password_1.$dirty)">
+                                    <img src="http://www.splafinga.com/znc/orangedream/pub/success-icon.png" alt=""/>
+                                </small>
                             </div>
+
                             <div class="form-group">
                                 <label for="password_2">Confirm your password:</label>
-                                <input type="text" name="password_2" id="password_2" class="form-control input-xlarge" >
+                                <input type="text" password-match="password_1" ng-model-options="{updateOn: 'blur'}" required ng-model="session.password_2" name="password_2" id="password_2" class="form-control input-xlarge" >
+                                <small class="error"
+                                       ng-show=" (deliveryForm.password_2.$error.required && rc.deliveryForm.attempted) || (deliveryForm.password_2.$invalid && deliveryForm.password_2.$dirty && !deliveryForm.password_2.$error.pwmatch)">
+                                    Confirmation password is  required.
+                                </small>
+                                <br/>
+                                <small class="error" ng-show="deliveryForm.password_2.$error.pwmatch">
+		                                Passwords don't match.
+	                            </small>
 
+                                <small class="success"
+                                       ng-show="(deliveryForm.password_2.$valid && deliveryForm.password_2.$dirty)">
+                                    <img src="http://www.splafinga.com/znc/orangedream/pub/success-icon.png" alt=""/>
+                                </small>
                             </div>
 
 
@@ -84,6 +135,6 @@
 
             </div>
         </div>
+      </div>
     </div>
 </div>
-    </div>
