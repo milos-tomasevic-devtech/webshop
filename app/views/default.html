@@ -19,10 +19,10 @@
         <div style="position:relative" ng-repeat="item in rows" class="col-md-3">
 
             <div class="boxthumb pull-left">
-                <img  class="product_image" src="{{item.thumbnail_url}}" alt=""/>
+                <img  class="product_image" ng-src="{{item.thumbnail_url}}" alt=""/>
 
             </div>
-            <h2><a href="#">{{item.name | characters:33}}</a></h2>
+            <h2><a ui-sref="productDetails({id: item.id})">{{item.name | characters:33}}</a></h2>
             <span class="price">Price: ${{item.price}}</span>
             <span><add-to-cart></add-to-cart></span>
         </div>

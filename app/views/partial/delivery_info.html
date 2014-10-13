@@ -109,7 +109,7 @@
 
                             <div class="form-group">
                                 <label for="password_2">Confirm your password:</label>
-                                <input type="text" password-match="password_1" ng-model-options="{updateOn: 'blur'}" required ng-model="session.password_2" name="password_2" id="password_2" class="form-control input-xlarge" >
+                                <input type="password" password-match="password_1" ng-model-options="{updateOn: 'blur'}" required ng-model="session.password_2" name="password_2" id="password_2" class="form-control input-xlarge" >
                                 <small class="error"
                                        ng-show=" (deliveryForm.password_2.$error.required && rc.deliveryForm.attempted) || (deliveryForm.password_2.$invalid && deliveryForm.password_2.$dirty && !deliveryForm.password_2.$error.pwmatch)">
                                     Confirmation password is  required.

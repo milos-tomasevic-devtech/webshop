@@ -33,4 +33,9 @@ angular.module('webshop').config(function($stateProvider, $urlRouterProvider) {
                 url: "/confirmation",
                 templateUrl: 'views/partial/order_confirmation.html'
             })
+
+        .state('productDetails', {
+            url: "/product/:id",
+            templateUrl: 'views/partial/product_details.html'
+        })
 });

@@ -383,3 +383,10 @@ input:-webkit-autofill {
 #delivery .success {
     margin-top:10px;
 }
+
+#products-details {
+    padding: 35px;
+}
+#product-details h1 {
+    font-size: 17px;
+}

@@ -16,12 +16,12 @@ angular.module('webshop')
 
                             $rootScope.$on("$stateChangeStart", function(e, toState, toParams, fromState, fromParams) {
 
-                                $('a[data-url]').closest('li').removeClass('active')
-                                $('a[data-url="' +$location.path() + '"]').closest('li').addClass('active')
+                                $('a[data-url]').closest('li').removeClass('active');
+                                $('a[data-url="' +$location.path() + '"]').closest('li').addClass('active');
                             });
 
-                            $('a[data-url]').closest('li').removeClass('active')
-                            $('a[data-url="' +$location.path() + '"]').closest('li').addClass('active')
+                            $('a[data-url]').closest('li').removeClass('active');
+                            $('a[data-url="' +$location.path() + '"]').closest('li').addClass('active');
 
                         });
 

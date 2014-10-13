@@ -7,11 +7,8 @@ angular.module('webshop')
                 $(elem).add(firstPassword).on('keyup', function () {
                     scope.$apply(function () {
                         if(elem.val() !== '' && $(firstPassword).val() !== '') {
-
-                                console.log("izvrsavam aa");
-                                var v = $(elem).val()===$(firstPassword).val();
+                            var v = $(elem).val()===$(firstPassword).val();
                                 ctrl.$setValidity('pwmatch', v);
-
 
                         }
 
