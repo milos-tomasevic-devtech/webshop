@@ -14,24 +14,43 @@ class ShopAPI extends API
 
     }
 
-    protected function products() {
+    protected function products($params) {
         if ($this->method == 'GET') {
 
-            $sql = 'SELECT * FROM products LIMIT 8';
-            $result = $this->mysqli->query($sql);
+            if (count($params)) {
+                $id = $params[0];
+                $sql = 'SELECT products.id, products.name, products.description, products.image_url, products.price, categories.name as type' .
+                    ' FROM products' .
+                    ' INNER JOIN categories' .
+                    ' ON products.category_id=categories.id' .
+                    ' WHERE products.id = ' . $id;
 
-            $array = Array();
+                $result = $this->mysqli->query($sql);
 
-            if ($result) {
-                while($row = $result->fetch_assoc()) {
-                    $newArray = Array();
-                    foreach($row as $key => $value) {
-                         $newArray[$key] = $value;
-                    }
-                    $array[] = $newArray;
+                if($result) {
+                    $row = $result->fetch_assoc();
+                    return $row;
                 }
+                return ['Nista'];
+
+            } else {
+
+                $result = $this->mysqli->query($sql);
+
+                $array = Array();
+
+                if ($result) {
+                    while($row = $result->fetch_assoc()) {
+                        $newArray = Array();
+                        foreach($row as $key => $value) {
+                            $newArray[$key] = $value;
+                        }
+                        $array[] = $newArray;
+                    }
+                }
+                return $array;
             }
-            return $array;
+
         }
     }
 }
