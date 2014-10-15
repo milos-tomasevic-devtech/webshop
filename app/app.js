@@ -35,7 +35,24 @@ angular.module('webshop').config(function($stateProvider, $urlRouterProvider) {
             })
 
         .state('productDetails', {
-            url: "/product/:id",
-            templateUrl: 'views/partial/product_details.html'
+            url: "/product/:id-:type",
+
+            templateProvider: function( templateService, $templateFactory, $stateParams){
+
+
+                return  $templateFactory.fromUrl(
+                            templateService.getProductTemplateUrl($stateParams.type)
+                        );
+
+            },
+
+            controller: function($scope, $stateParams, ProductFactory, productService) {
+                console.log("pozvan");
+                var currentId = $stateParams.id;
+                productService.get({'id': currentId}).$promise.then(function(data) {
+
+                    $scope.product = ProductFactory.createProduct(data);
+                });
+            }
         })
 });
